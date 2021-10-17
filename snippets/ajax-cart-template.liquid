@@ -87,7 +87,7 @@ as available hooks. {% endcomment %}
           </div>
           {{/items}}
   <!-- --------------- bit i injected  -->
-
+          {{#if show_upsell}}
           <div class="ajaxcart__product">
             <div class="ajaxcart__row" data-line="1">
               <div class="grid">
@@ -113,7 +113,7 @@ as available hooks. {% endcomment %}
               </div>
             </div>
           </div>
-
+          {{/if}}
           <!-- -------------- bit i injected -->
 
           {% endraw %}{% if settings.cart_notes_enable %}{% raw %}
