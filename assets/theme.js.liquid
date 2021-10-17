@@ -953,7 +953,8 @@ var ajaxCart = (function(module, $) {
 
     // Take over the add to cart form submit action if ajax enabled
     if (!settings.disableAjaxCart && $addToCart.length) {
-      formOverride();
+      formOverride($formContainer);
+      formOverride($('#upsell_form'));
     }
 
     // Run this function in case we're using the quantity selector outside of the cart
@@ -980,8 +981,8 @@ var ajaxCart = (function(module, $) {
     }
   };
 
-  formOverride = function() {
-    $formContainer.on('submit', function(evt) {
+  formOverride = function(form) {
+    form.on('submit', function(evt) {
       evt.preventDefault();
 
       // Add class to be styled if desired
@@ -989,7 +990,8 @@ var ajaxCart = (function(module, $) {
 
       // Remove any previous quantity errors
       $('.qty-error').remove();
-
+      console.log("data that is passed")
+      console.log(evt.target)
       ShopifyAPI.addItemFromForm(
         evt.target,
         itemAddedCallback,
