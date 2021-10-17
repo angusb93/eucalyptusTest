@@ -94,12 +94,12 @@ as available hooks. {% endcomment %}
               <div class="grid">
                 <div class="grid__item one-quarter">
                   <a href="{{settings.upsell_product_setting.url | append: "?variant=" | append: settings.upsell_product_setting.selected_or_first_available_variant.id}}" class="ajaxcart__product-image">
-                    <img src="https://cdn.shopify.com/s/files/1/0604/0997/0940/products/extra_750x_21608e5b-7a10-4f79-8049-10f7f36e3e59_small.png?v=1634260171" alt="Water based lube">
+                    <img src="{{ settings.upsell_product_setting | img_url }}" alt="Water based lube">
                   </a>
                 </div>
                 <div class="grid__item three-quarters">
                   <div class="ajaxcart__product-name--wrapper">
-                    <a href="/products/water-based-lube?variant=41671742193916" class="ajaxcart__product-name">{{settings.upsell_product_setting.title}}</a>
+                    <a href="{{settings.upsell_product_setting.url | append: "?variant=" | append: settings.upsell_product_setting.selected_or_first_available_variant.id}}" class="ajaxcart__product-name">{{settings.upsell_product_setting.title}}</a>
 
                   </div>
 
@@ -109,7 +109,7 @@ as available hooks. {% endcomment %}
                       <button type='submit' id='upsell_btn' form='upsell_form'> add too cart</button>
                     </div>
                     <div class="grid__item one-half text-right">
-                        <span class="ajaxcart__price">$50.00</span>
+                        <span class="ajaxcart__price">$ {{settings.upsell_product_setting.price}}</span>
                     </div>
                   </div>
                 </div>
