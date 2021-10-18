@@ -63,7 +63,9 @@
       };
       theme.settings = {
         cartType: {{ settings.cart_type | json }},
-        gridType: {{ settings.collection_products_grid | json }}
+        gridType: {{ settings.collection_products_grid | json }},
+        upsellProductSetting: {{ settings.upsell_product_setting | json }},
+        upsellProductSettingId: {{ settings.upsell_product_setting.selected_or_first_available_variant.id | json }},
       };
 
       {%- if template == 'collection' -%}
@@ -126,9 +128,17 @@
     <!-- form for ajax upsell  -->
     <form method="post" action="/cart/add" id="upsell_form">
       <select name="id" id="upsell_select">
-        <option value="41671742193916">Water based lube</option>
+        <option
+          value="{{
+            settings.upsell_product_setting.selected_or_first_available_variant
+              .id
+          }}"
+        >
+          {{ settings.upsell_product_setting.title }}
+        </option>
       </select>
     </form>
+
     <!-- end of ajax upsell -->
     {% section 'header' %}
 

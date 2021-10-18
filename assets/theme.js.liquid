@@ -1159,7 +1159,8 @@ var ajaxCart = (function(module, $) {
       };
 
       items.push(item);
-      if(cartItem.id == 41671742193916){
+      // // this is where it hides the item
+      if(cartItem.id == theme.settings.upsellProductSettingId){
         show_upsell = false;
       };
     });

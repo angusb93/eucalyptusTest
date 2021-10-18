@@ -106,10 +106,10 @@ as available hooks. {% endcomment %}
                   <div class="grid--full">
                     <div class="grid__item one-half">
 
-                      <button type='submit' id='upsell_btn' form='upsell_form'> add too cart</button>
+                      <button type='submit' id='upsell_btn' form='upsell_form'>add too cart</button>
                     </div>
                     <div class="grid__item one-half text-right">
-                        <span class="ajaxcart__price">$ {{settings.upsell_product_setting.price}}</span>
+                        <span class="ajaxcart__price">{{settings.upsell_product_setting.price | money}}</span>
                     </div>
                   </div>
                 </div>
