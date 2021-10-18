@@ -2139,8 +2139,13 @@
     "settings": [
       {
         "type": "product",
-        "label": "upsell_product_setting",
-        "id": "upsell_product_setting"
+        "label": "Upsell product setting 1",
+        "id": "upsell_product_setting_1"
+      },
+      {
+        "type": "product",
+        "label": "Upsell product setting 2",
+        "id": "upsell_product_setting_2"
       }
     ]
   }

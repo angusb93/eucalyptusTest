@@ -87,19 +87,19 @@ as available hooks. {% endcomment %}
           </div>
           {{/items}}
   <!-- --------------- bit i injected   -->
-          {{#if show_upsell}}
+          {{#if show_upsell_1}}
           {% endraw %}
           <div class="ajaxcart__product">
             <div class="ajaxcart__row" data-line="1">
               <div class="grid">
                 <div class="grid__item one-quarter">
-                  <a href="{{settings.upsell_product_setting.url | append: "?variant=" | append: settings.upsell_product_setting.selected_or_first_available_variant.id}}" class="ajaxcart__product-image">
-                    <img src="{{ settings.upsell_product_setting | img_url }}" alt="Water based lube">
+                  <a href="{{settings.upsell_product_setting_1.url | append: "?variant=" | append: settings.upsell_product_setting_1.selected_or_first_available_variant.id}}" class="ajaxcart__product-image">
+                    <img src="{{ settings.upsell_product_setting_1 | img_url }}" alt="Water based lube">
                   </a>
                 </div>
                 <div class="grid__item three-quarters">
                   <div class="ajaxcart__product-name--wrapper">
-                    <a href="{{settings.upsell_product_setting.url | append: "?variant=" | append: settings.upsell_product_setting.selected_or_first_available_variant.id}}" class="ajaxcart__product-name">{{settings.upsell_product_setting.title}}</a>
+                    <a href="{{settings.upsell_product_setting_1.url | append: "?variant=" | append: settings.upsell_product_setting_1.selected_or_first_available_variant.id}}" class="ajaxcart__product-name">{{settings.upsell_product_setting_1.title}}</a>
 
                   </div>
 
@@ -109,7 +109,38 @@ as available hooks. {% endcomment %}
                       <button type='submit' id='upsell_btn' form='upsell_form'>add too cart</button>
                     </div>
                     <div class="grid__item one-half text-right">
-                        <span class="ajaxcart__price">{{settings.upsell_product_setting.price | money}}</span>
+                        <span class="ajaxcart__price">{{settings.upsell_product_setting_1.price | money}}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% raw %}
+          {{/if}}
+          {{#if show_upsell_2}}
+          {% endraw %}
+          <div class="ajaxcart__product">
+            <div class="ajaxcart__row" data-line="1">
+              <div class="grid">
+                <div class="grid__item one-quarter">
+                  <a href="{{settings.upsell_product_setting_2.url | append: "?variant=" | append: settings.upsell_product_setting_2.selected_or_first_available_variant.id}}" class="ajaxcart__product-image">
+                    <img src="{{ settings.upsell_product_setting_2 | img_url }}" alt="Water based lube">
+                  </a>
+                </div>
+                <div class="grid__item three-quarters">
+                  <div class="ajaxcart__product-name--wrapper">
+                    <a href="{{settings.upsell_product_setting_2.url | append: "?variant=" | append: settings.upsell_product_setting_2.selected_or_first_available_variant.id}}" class="ajaxcart__product-name">{{settings.upsell_product_setting_2.title}}</a>
+
+                  </div>
+
+                  <div class="grid--full">
+                    <div class="grid__item one-half">
+
+                      <button type='submit' id='upsell_btn_2' form='upsell_form_2'>add too cart</button>
+                    </div>
+                    <div class="grid__item one-half text-right">
+                        <span class="ajaxcart__price">{{settings.upsell_product_setting_2.price | money}}</span>
                     </div>
                   </div>
                 </div>

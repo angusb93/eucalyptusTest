@@ -957,7 +957,8 @@ var ajaxCart = (function(module, $) {
     }
     // add ajax upsell form 
     if (!settings.disableAjaxCart){
-    formOverride($('#upsell_form'));
+      formOverride($('#upsell_form'));
+      formOverride($('#upsell_form_2'));
     }
     // Run this function in case we're using the quantity selector outside of the cart
     adjustCart();
@@ -1047,7 +1048,8 @@ var ajaxCart = (function(module, $) {
 
     // Handlebars.js cart layout
     var items = [],
-    show_upsell=true,
+    show_upsell_1=true,
+    show_upsell_2=true,
       item = {},
       data = {},
       source = $('#CartTemplate').html(),
@@ -1159,15 +1161,20 @@ var ajaxCart = (function(module, $) {
       };
 
       items.push(item);
+
       // // this is where it hides the item
-      if(cartItem.id == theme.settings.upsellProductSettingId){
-        show_upsell = false;
+      if(cartItem.id == theme.settings.upsellProductSetting1Id){
+        show_upsell_1 = false;
+      };
+      if(cartItem.id == theme.settings.upsellProductSetting2Id){
+        show_upsell_2 = false;
       };
     });
 
     // Gather all cart data and add to DOM
     data = {
-      show_upsell: show_upsell,
+      show_upsell_1: show_upsell_1,
+      show_upsell_2: show_upsell_2,
       items: items,
       note: cart.note,
       totalPrice: theme.Currency.formatMoney(

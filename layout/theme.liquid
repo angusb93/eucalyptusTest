@@ -64,8 +64,10 @@
       theme.settings = {
         cartType: {{ settings.cart_type | json }},
         gridType: {{ settings.collection_products_grid | json }},
-        upsellProductSetting: {{ settings.upsell_product_setting | json }},
-        upsellProductSettingId: {{ settings.upsell_product_setting.selected_or_first_available_variant.id | json }},
+        upsellProductSetting1: {{ settings.upsell_product_setting_1 | json }},
+        upsellProductSetting1Id: {{ settings.upsell_product_setting_1.selected_or_first_available_variant.id | json }},
+        upsellProductSetting2: {{ settings.upsell_product_setting_2 | json }},
+        upsellProductSetting2Id: {{ settings.upsell_product_setting_2.selected_or_first_available_variant.id | json }},
       };
 
       {%- if template == 'collection' -%}
@@ -130,11 +132,23 @@
       <select name="id" id="upsell_select">
         <option
           value="{{
-            settings.upsell_product_setting.selected_or_first_available_variant
-              .id
+            settings.upsell_product_setting_1
+              .selected_or_first_available_variant.id
           }}"
         >
-          {{ settings.upsell_product_setting.title }}
+          {{ settings.upsell_product_setting_1.title }}
+        </option>
+      </select>
+    </form>
+    <form method="post" action="/cart/add" id="upsell_form_2">
+      <select name="id" id="upsell_select">
+        <option
+          value="{{
+            settings.upsell_product_setting_2
+              .selected_or_first_available_variant.id
+          }}"
+        >
+          {{ settings.upsell_product_setting_2.title }}
         </option>
       </select>
     </form>
