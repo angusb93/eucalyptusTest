@@ -135,13 +135,14 @@ as available hooks. {% endcomment %}
                                               <button form="upsell_form" id="upsell_btn" type="submit">add too cart</button>
                                           </div>
                                           <div class="grid__item one-half text-right">
-                                              <span class="ajaxcart__price">{{settings.upsell_product_setting_1.price | money}}</span>
+                                              <span class="ajaxcart__price"><strike>{{settings.upsell_product_setting_1.price | money}}</strike></span>
                                           </div>
                                       </div>
                                   </div>
                               </div>
                           </div>
                       </div>
+
                       {% raw %}{{/if}}
                       {{#if show_upsell_2}}{% endraw %}
                       <div class="ajaxcart__product">

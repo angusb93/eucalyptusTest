@@ -2143,6 +2143,11 @@
         "id": "upsell_product_setting_1"
       },
       {
+        "type": "number",
+        "label": "Upsell product discount price",
+        "id": "upsell_product_discount_price_1"
+      },
+      {
         "type": "product",
         "label": "Upsell product setting 2",
         "id": "upsell_product_setting_2"

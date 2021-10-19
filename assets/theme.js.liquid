@@ -1201,8 +1201,11 @@ var ajaxCart = (function(module, $) {
     $body.removeClass('drawer--is-loading');
     $body.trigger('ajaxCart.afterCartLoad', cart);
     console.log('cart loaded')
-    // $(".carousel-class").slick();
-    $(".carousel-class").not('.slick-initialized').slick()
+    // makes a carousel when cart is laoded
+    $(".carousel-class").not('.slick-initialized').slick({
+      nextArrow: '<button type="button" class="slick-next">&#5125;</button>',
+      prevArrow: '<button type="button" class="slick-prev">&#5130;</button>'
+    })
 
     if (window.Shopify && Shopify.StorefrontExpressButtons) {
       Shopify.StorefrontExpressButtons.initialize();
