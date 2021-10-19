@@ -717,6 +717,8 @@ theme.LibraryLoader = (function() {
 
 /* ================ MODULES ================ */
 {% if settings.cart_type == 'drawer' %}
+
+
 /*!
 handlebars v1.3.0
 
@@ -882,6 +884,8 @@ ShopifyAPI.changeItem = function(line, quantity, callback) {
   jQuery.ajax(params);
 };
 
+
+
 /*============================================================================
   Ajax Shopify Add To Cart
 ==============================================================================*/
@@ -963,6 +967,7 @@ var ajaxCart = (function(module, $) {
     // Run this function in case we're using the quantity selector outside of the cart
     adjustCart();
   };
+  
 
   loadCart = function() {
     $body.addClass('drawer--is-loading');
@@ -1030,6 +1035,7 @@ var ajaxCart = (function(module, $) {
 
   buildCart = function(cart) {
     // Start with a fresh cart div
+    
     $cartContainer.empty();
 
     // Show empty cart
@@ -1194,6 +1200,9 @@ var ajaxCart = (function(module, $) {
   cartCallback = function(cart) {
     $body.removeClass('drawer--is-loading');
     $body.trigger('ajaxCart.afterCartLoad', cart);
+    console.log('cart loaded')
+    // $(".carousel-class").slick();
+    $(".carousel-class").not('.slick-initialized').slick()
 
     if (window.Shopify && Shopify.StorefrontExpressButtons) {
       Shopify.StorefrontExpressButtons.initialize();
@@ -1369,9 +1378,11 @@ var ajaxCart = (function(module, $) {
     init: init,
     load: loadCart
   };
+  
 
   return module;
 })(ajaxCart || {}, jQuery);
+
 
 {% endif %}
 /*============================================================================
@@ -4591,3 +4602,4 @@ var afterResize = (function () {
     t[uniqueId] = setTimeout(callback, ms);
   };
 })();
+
