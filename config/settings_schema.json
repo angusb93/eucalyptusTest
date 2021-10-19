@@ -2144,13 +2144,18 @@
       },
       {
         "type": "number",
-        "label": "Upsell product discount price",
+        "label": "Upsell product discount price 1",
         "id": "upsell_product_discount_price_1"
       },
       {
         "type": "product",
         "label": "Upsell product setting 2",
         "id": "upsell_product_setting_2"
+      },
+      {
+        "type": "number",
+        "label": "Upsell product discount price 2",
+        "id": "upsell_product_discount_price_2"
       }
     ]
   }

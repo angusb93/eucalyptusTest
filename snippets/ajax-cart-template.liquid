@@ -113,10 +113,11 @@ as available hooks. {% endcomment %}
               <!-- bit i injected   -->
 
               {{#if show_upsell_1}}{% endraw %}
+              <span class='special-offer'>Special offer for you</span>
               <div>
                   <div id='super-rare-id' class='carousel-class'>
                       <div class="ajaxcart__product">
-                          <div class="ajaxcart__row" data-line="1">
+                          <div class="offer-card" data-line="1">
                               <div class="grid">
                                   <div class="grid__item one-quarter">
                                       <a href="{{settings.upsell_product_setting_1.url | append: "?variant=" | append: settings.upsell_product_setting_1.selected_or_first_available_variant.id}}" class="ajaxcart__product-image">
@@ -130,12 +131,13 @@ as available hooks. {% endcomment %}
                                       </div>
 
                                       <div class="grid--full">
-                                          <div class="grid__item one-half">
+                                          <div class="grid__item three-quarters">
 
-                                              <button form="upsell_form" id="upsell_btn" type="submit">add too cart</button>
+                                              <button form="upsell_form" id="upsell_btn" type="submit">Add to bag - {{settings.upsell_product_discount_price_1  | money}}</button>
                                           </div>
-                                          <div class="grid__item one-half text-right">
+                                          <div class="grid__item width-10 text-right">
                                               <span class="ajaxcart__price"><strike>{{settings.upsell_product_setting_1.price | money}}</strike></span>
+                                              <span class="ajaxcart__price">{{settings.upsell_product_discount_price_1  | money}}</span>
                                           </div>
                                       </div>
                                   </div>
@@ -146,7 +148,7 @@ as available hooks. {% endcomment %}
                       {% raw %}{{/if}}
                       {{#if show_upsell_2}}{% endraw %}
                       <div class="ajaxcart__product">
-                          <div class="ajaxcart__row" data-line="1">
+                          <div class="offer-card" data-line="1">
                               <div class="grid">
                                   <div class="grid__item one-quarter">
                                       <a href="{{settings.upsell_product_setting_2.url | append: "?variant=" | append: settings.upsell_product_setting_2.selected_or_first_available_variant.id}}" class="ajaxcart__product-image">
@@ -165,7 +167,8 @@ as available hooks. {% endcomment %}
                                               <button form="upsell_form_2" id="upsell_btn_2" type="submit">add too cart</button>
                                           </div>
                                           <div class="grid__item one-half text-right">
-                                              <span class="ajaxcart__price">{{settings.upsell_product_setting_2.price | money}}</span>
+                                              <span class="ajaxcart__price"><strike>{{settings.upsell_product_setting_2.price | money}}</strike></span>
+                                              <span class="ajaxcart__price">{{settings.upsell_product_discount_price_2  | money}}</span>
                                           </div>
                                       </div>
                                   </div>
