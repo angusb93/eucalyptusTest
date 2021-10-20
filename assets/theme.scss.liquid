@@ -4803,7 +4803,7 @@ $disclosure-list-large: 1100px;
 
 
 
-//  custom srtyles
+//  custom styles
 
 #upsell_select {
   display: none;
@@ -4811,6 +4811,7 @@ $disclosure-list-large: 1100px;
 
 #upsell_btn {
   background-color: $colorPrimary;
+  margin-top: 10px;
   color: white;
   border-radius: 16px;
   padding: 10px 20px;
@@ -4857,5 +4858,45 @@ $disclosure-list-large: 1100px;
 .offer-card{
   background-color: #f4f0ec;
   border-radius: 10px;
-  height: 10rem;
+  height: 100%;
+  padding: 12px 10px;
+}
+
+.product-content {
+  width: calc(100% - 100px);
+  text-align: left;
+  margin-left: 10px;
+}
+.offer-card_inner {
+  display: flex;
+
+}
+
+.offer-price {
+  float: right;
+}
+
+.offer-title{
+  font-weight: bold;
+  font-size: 0.8rem;
+  padding-bottom: 10px
+}
+.inline-price {
+  display: inline;
+}
+
+.offer-description {
+  font-size: 12px;
+  line-height: 1.5;
+  height: 54px;
+  overflow: hidden;
+ text-overflow: ellipsis;
+ display: -webkit-box;
+ -webkit-line-clamp: 3;
+ -webkit-box-orient: vertical;
+ padding-bottom: 10px
+}
+
+.offer-image {
+  border-radius: 5px;
 }

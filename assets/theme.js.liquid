@@ -1204,7 +1204,8 @@ var ajaxCart = (function(module, $) {
     // makes a carousel when cart is laoded
     $(".carousel-class").not('.slick-initialized').slick({
       nextArrow: '<button type="button" class="slick-next">&#5125;</button>',
-      prevArrow: '<button type="button" class="slick-prev">&#5130;</button>'
+      prevArrow: '<button type="button" class="slick-prev">&#5130;</button>',
+      infinite: false
     })
 
     if (window.Shopify && Shopify.StorefrontExpressButtons) {
