@@ -245,20 +245,5 @@
         {{ "home_page.slideshow.navigation_instructions" | t }}
       </li>
     </ul>
-    // slick product slider
-    <script>
-      var waitForEl = function (selector, callback) {
-        if (jQuery(".carousel-class").length) {
-          callback();
-        } else {
-          setTimeout(function () {
-            waitForEl(selector, callback);
-          }, 1000);
-        }
-      };
-      waitForEl(".carousel-class", function () {
-        $(".carousel-class").slick();
-      });
-    </script>
   </body>
 </html>
