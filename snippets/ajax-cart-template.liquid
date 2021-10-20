@@ -112,70 +112,75 @@ as available hooks. {% endcomment %}
               {{/items}}
               <!-- bit i injected   -->
 
-              {{#if show_upsell_1}}{% endraw %}
-              <span class="special-offer">Special offer for you</span>
-              <div>
-                  <div class="carousel-class" id="super-rare-id">
-                      <div class="ajaxcart__product">
-                          <div class="offer-card" data-line="1">
-                              <div class="offer-card_inner">
-                                  <a href="{{settings.upsell_product_setting_1.url | append: "?variant=" | append: settings.upsell_product_setting_1.selected_or_first_available_variant.id}}" class="ajaxcart__product-image">
-                                      <img class="offer-image" src="{{ settings.upsell_product_setting_1 | img_url }}" >
-                                  </a>
-                                  <div class="product-content">
-                                      <div class='offer-save-card'>Save {{ settings.upsell_product_setting_1.price | minus: settings.upsell_product_discount_price_1 | money_without_trailing_zeros}}</div>
-                                      <div class="offer-title">
-                                          <a href="{{settings.upsell_product_setting_1.url | append: "?variant=" | append: settings.upsell_product_setting_1.selected_or_first_available_variant.id}}" class="inline-price">
-                                              <span>{{settings.upsell_product_setting_1.title}}</span>
-                                          </a>
-                                          <span class="offer-price">
-                                              <strike>{{settings.upsell_product_setting_1.price | money}}</strike>
-                                          </span>
-                                      </div>
-                                      <div class="offer-description">
-                                          {{settings.upsell_product_setting_1.description}}
-                                      </div>
-                                      <div class="grid--full">
-                                          <button form="upsell_form" id="upsell_btn" type="submit">Add to bag &mdash;
-                                              {{settings.upsell_product_discount_price_1  | money}}</button>
+                  {{#if show_upsell_1}}
+                  {% endraw %}
+                  <span class="special-offer">Special offer for you</span>
+                  <div>
+                      <div class="carousel-class" id="super-rare-id">
+                          <div class="ajaxcart__product">
+                              <div class="offer-card" data-line="1">
+                                  <div class="offer-card_inner">
+                                      <a href="{{settings.upsell_product_setting_1.url | append: "?variant=" | append: settings.upsell_product_setting_1.selected_or_first_available_variant.id}}" class="ajaxcart__product-image">
+                                          <img class="offer-image" src="{{ settings.upsell_product_setting_1 | img_url }}">
+                                      </a>
+                                      <div class="product-content">
+                                          <div class="offer-save-card">Save
+                                              {{ settings.upsell_product_setting_1.price | minus: settings.upsell_product_discount_price_1 | money_without_trailing_zeros}}</div>
+                                          <div class="offer-title">
+                                              <a href="{{settings.upsell_product_setting_1.url | append: "?variant=" | append: settings.upsell_product_setting_1.selected_or_first_available_variant.id}}" class="inline-price">
+                                                  <span>{{settings.upsell_product_setting_1.title}}</span>
+                                              </a>
+                                              <span class="offer-price">
+                                                  <strike>{{settings.upsell_product_setting_1.price | money}}</strike>
+                                              </span>
+                                          </div>
+                                          <div class="offer-description">
+                                              {{settings.upsell_product_setting_1.description}}
+                                          </div>
+                                          <div class="grid--full">
+                                              <button form="upsell_form" id="upsell_btn" type="submit">Add to bag &mdash;
+                                                  {{settings.upsell_product_discount_price_1  | money}}</button>
+                                          </div>
                                       </div>
                                   </div>
                               </div>
                           </div>
-                      </div>
-                      {% raw %}{{/if}}
-                      {{#if show_upsell_2}}{% endraw %}
-                      <div class="ajaxcart__product">
-                          <div class="offer-card" data-line="1">
-                              <div class="offer-card_inner">
-                                  <a href="{{settings.upsell_product_setting_2.url | append: "?variant=" | append: settings.upsell_product_setting_2.selected_or_first_available_variant.id}}" class="ajaxcart__product-image">
-                                      <img class="offer-image" src="{{ settings.upsell_product_setting_2 | img_url }}" alt="Water based lube">
-                                  </a>
-                                  <div class="product-content">
-                                      <div class='offer-save-card'>Save {{ settings.upsell_product_setting_2.price | minus: settings.upsell_product_discount_price_2 | money_without_trailing_zeros}}</div>
-                                      <div class="offer-title">
-                                          <a href="{{settings.upsell_product_setting_2.url | append: "?variant=" | append: settings.upsell_product_setting_2.selected_or_first_available_variant.id}}" class="inline-price">
-                                              <span>{{settings.upsell_product_setting_2.title}}</span>
-                                          </a>
-                                          <span class="offer-price">
-                                              <strike>{{settings.upsell_product_setting_2.price | money}}</strike>
-                                          </span>
-                                      </div>
-                                      <div class="offer-description">
-                                          {{settings.upsell_product_setting_2.description}}
-                                      </div>
-                                      <div class="grid--full">
-                                          <button form="upsell_form_2" id="upsell_btn" type="submit">Add to bag &mdash;
-                                              {{settings.upsell_product_discount_price_2  | money}}</button>
+                          {% raw %}{{/if}}
+                          {{#if show_upsell_2}}{% endraw %}
+                          <div class="ajaxcart__product">
+                              <div class="offer-card" data-line="1">
+                                  <div class="offer-card_inner">
+                                      <a href="{{settings.upsell_product_setting_2.url | append: "?variant=" | append: settings.upsell_product_setting_2.selected_or_first_available_variant.id}}" class="ajaxcart__product-image">
+                                          <img class="offer-image" src="{{ settings.upsell_product_setting_2 | img_url }}" alt="Water based lube">
+                                      </a>
+                                      <div class="product-content">
+                                          <div class="offer-save-card">Save
+                                              {{ settings.upsell_product_setting_2.price | minus: settings.upsell_product_discount_price_2 | money_without_trailing_zeros}}</div>
+                                          <div class="offer-title">
+                                              <a href="{{settings.upsell_product_setting_2.url | append: "?variant=" | append: settings.upsell_product_setting_2.selected_or_first_available_variant.id}}" class="inline-price">
+                                                  <span>{{settings.upsell_product_setting_2.title}}</span>
+                                              </a>
+                                              <span class="offer-price">
+                                                  <strike>{{settings.upsell_product_setting_2.price | money}}</strike>
+                                              </span>
+                                          </div>
+                                          <div class="offer-description">
+                                              {{settings.upsell_product_setting_2.description}}
+                                          </div>
+                                          <div class="grid--full">
+                                              <button form="upsell_form_2" id="upsell_btn" type="submit">Add to bag &mdash;
+                                                  {{settings.upsell_product_discount_price_2  | money}}</button>
+                                          </div>
                                       </div>
                                   </div>
                               </div>
                           </div>
                       </div>
                   </div>
-              </div>
+                  {% raw %}
+                  {{/if}}
 
-              {% raw %}{{/if}}
+
 
 
               <!-- bit i injected -->
@@ -231,7 +236,7 @@ as available hooks. {% endcomment %}
               </p>
               <button class="btn--secondary btn--full cart__checkout" name="checkout" type="submit">
               {% endraw %}
-              {{ 'cart.general.checkout' | t }}
+              <b>{{ 'cart.general.checkout' | t }}</b>
               {% raw %}
                   <span aria-hidden="true" class="icon icon-arrow-right"></span>
               </button>
