@@ -123,6 +123,7 @@ as available hooks. {% endcomment %}
                                       <img class="offer-image" src="{{ settings.upsell_product_setting_1 | img_url }}" >
                                   </a>
                                   <div class="product-content">
+                                      <div class='offer-save-card'>Save {{ settings.upsell_product_setting_1.price | minus: settings.upsell_product_discount_price_1 | money_without_trailing_zeros}}</div>
                                       <div class="offer-title">
                                           <a href="{{settings.upsell_product_setting_1.url | append: "?variant=" | append: settings.upsell_product_setting_1.selected_or_first_available_variant.id}}" class="inline-price">
                                               <span>{{settings.upsell_product_setting_1.title}}</span>
@@ -135,7 +136,7 @@ as available hooks. {% endcomment %}
                                           {{settings.upsell_product_setting_1.description}}
                                       </div>
                                       <div class="grid--full">
-                                          <button form="upsell_form" id="upsell_btn" type="submit">Add too cart &mdash;
+                                          <button form="upsell_form" id="upsell_btn" type="submit">Add to bag &mdash;
                                               {{settings.upsell_product_discount_price_1  | money}}</button>
                                       </div>
                                   </div>
@@ -151,6 +152,7 @@ as available hooks. {% endcomment %}
                                       <img class="offer-image" src="{{ settings.upsell_product_setting_2 | img_url }}" alt="Water based lube">
                                   </a>
                                   <div class="product-content">
+                                      <div class='offer-save-card'>Save {{ settings.upsell_product_setting_2.price | minus: settings.upsell_product_discount_price_2 | money_without_trailing_zeros}}</div>
                                       <div class="offer-title">
                                           <a href="{{settings.upsell_product_setting_2.url | append: "?variant=" | append: settings.upsell_product_setting_2.selected_or_first_available_variant.id}}" class="inline-price">
                                               <span>{{settings.upsell_product_setting_2.title}}</span>
@@ -163,7 +165,7 @@ as available hooks. {% endcomment %}
                                           {{settings.upsell_product_setting_2.description}}
                                       </div>
                                       <div class="grid--full">
-                                          <button form="upsell_form_2" id="upsell_btn" type="submit">Add too cart &mdash;
+                                          <button form="upsell_form_2" id="upsell_btn" type="submit">Add to bag &mdash;
                                               {{settings.upsell_product_discount_price_2  | money}}</button>
                                       </div>
                                   </div>
