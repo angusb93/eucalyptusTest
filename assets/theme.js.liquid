@@ -1056,6 +1056,7 @@ var ajaxCart = (function(module, $) {
     var items = [],
     show_upsell_1=true,
     show_upsell_2=true,
+    show_spec_off=true,
       item = {},
       data = {},
       source = $('#CartTemplate').html(),
@@ -1175,12 +1176,16 @@ var ajaxCart = (function(module, $) {
       if(cartItem.id == theme.settings.upsellProductSetting2Id){
         show_upsell_2 = false;
       };
+      if( !show_upsell_1 && !show_upsell_2){
+        show_spec_off = false;
+      }
     });
 
     // Gather all cart data and add to DOM
     data = {
       show_upsell_1: show_upsell_1,
       show_upsell_2: show_upsell_2,
+      show_spec_off: show_spec_off,
       items: items,
       note: cart.note,
       totalPrice: theme.Currency.formatMoney(
