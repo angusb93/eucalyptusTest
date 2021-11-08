@@ -64,10 +64,9 @@
       theme.settings = {
         cartType: {{ settings.cart_type | json }},
         gridType: {{ settings.collection_products_grid | json }},
-        upsellProductSetting1: {{ settings.upsell_product_setting_1 | json }},
         upsellProductSetting1Id: {{ settings.upsell_product_setting_1.selected_or_first_available_variant.id | json }},
-        upsellProductSetting2: {{ settings.upsell_product_setting_2 | json }},
         upsellProductSetting2Id: {{ settings.upsell_product_setting_2.selected_or_first_available_variant.id | json }},
+        productCollection: {{ settings.product_collection.products | json }},
       };
 
       {%- if template == 'collection' -%}

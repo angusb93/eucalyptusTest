@@ -2138,6 +2138,11 @@
     "name": "cart settings",
     "settings": [
       {
+        "type": "collection",
+        "label": "Products to be applied too",
+        "id": "product_collection"
+      },
+      {
         "type": "product",
         "label": "Upsell product setting 1",
         "id": "upsell_product_setting_1"

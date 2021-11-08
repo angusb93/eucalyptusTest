@@ -1051,11 +1051,12 @@ var ajaxCart = (function(module, $) {
       cartCallback(cart);
       return;
     }
+    
 
     // Handlebars.js cart layout
     var items = [],
-    show_upsell_1=true,
-    show_upsell_2=true,
+    show_upsell_1= theme.settings.upsellProductSetting1Id !== null ? true : false,
+    show_upsell_2= theme.settings.upsellProductSetting2Id !== null ? true : false,
     show_spec_off=true,
       item = {},
       data = {},
@@ -1169,11 +1170,16 @@ var ajaxCart = (function(module, $) {
 
       items.push(item);
 
-      // // this is where it hides the item
-      if(cartItem.id == theme.settings.upsellProductSetting1Id){
+      // creates an array of product variant ids
+      let collectionVariantIds = [];
+      theme.settings.productCollection.forEach((product) => {
+        collectionVariantIds.push(product.variants[0].id);
+      });
+      // this is where it hides the items
+      if(cartItem.id == theme.settings.upsellProductSetting1Id || !collectionVariantIds.includes(cartItem.id)){
         show_upsell_1 = false;
       };
-      if(cartItem.id == theme.settings.upsellProductSetting2Id){
+      if(cartItem.id == theme.settings.upsellProductSetting2Id || !collectionVariantIds.includes(cartItem.id)){
         show_upsell_2 = false;
       };
       if( !show_upsell_1 && !show_upsell_2){
@@ -1205,7 +1211,6 @@ var ajaxCart = (function(module, $) {
   cartCallback = function(cart) {
     $body.removeClass('drawer--is-loading');
     $body.trigger('ajaxCart.afterCartLoad', cart);
-    console.log('cart loaded')
     // makes a carousel when cart is laoded
     $(".carousel-class").not('.slick-initialized').slick({
       nextArrow: '<button type="button" class="slick-next">&#5125;</button>',
